@@ -33,8 +33,10 @@ jobs:
           IMAGE_TAG: latest
         run: |
           cd lambdas/my_test_lambda
-          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
-          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+          docker buildx build \
+            --platform linux/arm64 \
+            -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG \
+            --push .
 
       - name: Update Lambda function to use new image
         env:
