@@ -50,5 +50,5 @@ jobs:
           IMAGE_TAG: latest
         run: |
           aws lambda update-function-code \
-            --function-name my_test_lambda \
+            --function-name hello-world \
             --image-uri $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
