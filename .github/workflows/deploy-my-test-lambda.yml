@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - 'lambdas/my_test_lambda/**'
+      - '.github/workflows/deploy-my-test-lambda.yml'
 
 jobs:
   deploy:
