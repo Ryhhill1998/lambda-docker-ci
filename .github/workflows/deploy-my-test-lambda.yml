@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'lambdas/my_test_lambda/**'
+      - 'lambdas/example/**'
 
 jobs:
   deploy:
